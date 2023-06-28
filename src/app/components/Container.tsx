@@ -4,6 +4,7 @@ import { CarCard } from './CarCard'
 import { MdOutlineArrowForwardIos } from 'react-icons/md'
 import cars from '../../../public/api/cars.json'
 import { useState } from 'react'
+import { CarouselDot } from './CarouselDot'
 
 interface iCar {
     id: string
@@ -35,7 +36,7 @@ export const Container = () => {
         <div className="container max-w-[1300px] mx-auto mt-40 overflow-auto lg:overflow-hidden">
             <div
                 className="flex gap-5 w-full px-4"
-                style={{ transform: `translateX(-${slide}px)`, transition: '1s' }}
+                style={{ transform: `translateX(-${slide}px)`, transition: 'ease-in-out 1s' }}
             >
                 {
                     cars.map((car: iCar) => (
@@ -63,6 +64,16 @@ export const Container = () => {
                 >
                     <MdOutlineArrowForwardIos />
                 </div>
+            </div>
+
+            <div className='flex justify-center gap-3 mt-10'>
+                {
+                    cars.map(car => (
+                        <>
+                            <CarouselDot />
+                        </>
+                    ))
+                }
             </div>
         </div>
     )
