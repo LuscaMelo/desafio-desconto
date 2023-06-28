@@ -3,6 +3,7 @@
 import { CarCard } from './CarCard'
 import { MdOutlineArrowForwardIos } from 'react-icons/md'
 import cars from '../../../public/api/cars.json'
+import { useState } from 'react'
 
 interface iCar {
     id: string
@@ -14,13 +15,28 @@ interface iCar {
 
 export const Container = () => {
 
-    const scroll = () => {
-        console.log('cheguei')
+    const nextCard = () => {
+        setSlide(slide + 322)
+        if (slide >= 1200) {
+            setSlide(slide)
+        }
     }
+
+    const prevCard = () => {
+        setSlide(slide - 322)
+        if (slide <= 0) {
+            setSlide(0)
+        }
+    }
+
+    const [slide, setSlide] = useState(0)
 
     return (
         <div className="container max-w-[1300px] mx-auto mt-40 overflow-auto lg:overflow-hidden">
-            <div className='flex gap-5 w-full px-4'>
+            <div
+                className="flex gap-5 w-full px-4"
+                style={{ transform: `translateX(-${slide}px)`, transition: '1s' }}
+            >
                 {
                     cars.map((car: iCar) => (
                         <CarCard
@@ -35,12 +51,15 @@ export const Container = () => {
             </div>
 
             <div className='hidden xl:flex justify-end pr-5 gap-3 mt-10'>
-                <div className='flex items-center justify-center rounded-full border border-gray-800 w-[35px] h-[35px] cursor-pointer rotate-180'>
+                <div
+                    className='flex items-center justify-center rounded-full border border-gray-800 w-[35px] h-[35px] cursor-pointer rotate-180'
+                    onClick={() => prevCard()}
+                >
                     <MdOutlineArrowForwardIos />
                 </div>
                 <div
                     className='flex items-center justify-center rounded-full border border-gray-800 w-[35px] h-[35px] cursor-pointer'
-                    onClick={() => scroll()}
+                    onClick={() => nextCard()}
                 >
                     <MdOutlineArrowForwardIos />
                 </div>
