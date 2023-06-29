@@ -83,7 +83,7 @@ export const Container = () => {
 
     return (
         <div>
-            <div className="container max-w-[1300px] mx-auto mt-[4.5rem] overflow-hidden">
+            <div className="container max-w-[1300px] mx-auto mt-[2rem] lg:mt-[4.5rem] overflow-hidden">
 
                 <div className='flex flex-col md:flex-row md:items-center px-5 gap-3 mb-10'>
                     <span className='font-bold text-sm text-gray-800'>Sort by:</span>
