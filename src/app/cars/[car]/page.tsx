@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import cars from '../../../../public/api/cars.json'
 import Link from 'next/link'
+import { MdOutlineArrowForwardIos } from 'react-icons/md'
 
 export default function Page({ params }: { params: { car: string } }) {
 
@@ -13,6 +14,13 @@ export default function Page({ params }: { params: { car: string } }) {
             {
                 carSelected.map(car => (
                     <div className='max-w-[750px] mt-[4.5rem] mx-auto' key={car.id}>
+                        <div className=' flex items-center gap-2 px-5 md:px-0 mb-10'>
+                            <Link href={'/'}>
+                                <span className='font-semibold underline underline-offset-4 text-gray-600'>All cars</span>
+                            </Link>
+                            <MdOutlineArrowForwardIos className='text-xs' />
+                            <span className='font-semibold text-gray-600'>{car.modelName}</span>
+                        </div>
                         <div className='px-5 md:px-0'>
                             <span className='text-sm font-bold text-gray-400 uppercase'>{car.bodyType}</span>
                             <div className='flex items-center gap-2 pb-3'>
