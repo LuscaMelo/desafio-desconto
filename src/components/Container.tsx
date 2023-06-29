@@ -127,10 +127,10 @@ export const Container = () => {
                         <MdOutlineArrowForwardIos className={`${slide != 0 ? 'text-gray-800' : 'text-gray-400'}`} />
                     </div>
                     <div
-                        className={`flex items-center justify-center rounded-full border ${slide != width ? 'border-gray-800' : 'border-gray-400'} w-[35px] h-[35px] cursor-pointer`}
+                        className={`flex items-center justify-center rounded-full border ${carList.length > 4 && slide != width ? 'border-gray-800' : 'border-gray-400'} w-[35px] h-[35px] cursor-pointer`}
                         onClick={() => nextCard()}
                     >
-                        <MdOutlineArrowForwardIos className={`${slide != width ? 'text-gray-800' : 'text-gray-400'}`} />
+                        <MdOutlineArrowForwardIos className={`${carList.length > 4 && slide != width ? 'text-gray-800' : 'text-gray-400'}`} />
                     </div>
                 </div>
 
