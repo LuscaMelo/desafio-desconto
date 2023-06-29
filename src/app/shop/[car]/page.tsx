@@ -42,9 +42,7 @@ export default function Page({ params }: { params: { car: string } }) {
                             <span className='text-3xl font-bold'>
                                 $12 000
                             </span>
-                            <Link href={`/shop/${params.car}`}>
-                                <button className='py-2 px-8 border border-blue-700 shadow-md rounded-full font-semibold hover:bg-blue-800 duration-300 bg-blue-700 text-white'>Order Now</button>
-                            </Link>
+                            <button className='py-2 px-8 border border-blue-700 shadow-md rounded-full font-semibold hover:bg-blue-800 duration-300 bg-blue-700 text-white'>Order Now</button>
                         </div>
                     </div>
                 ))
