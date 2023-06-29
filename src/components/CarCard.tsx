@@ -16,7 +16,7 @@ export const CarCard = ({ bodyType, modelName, modelType, imageUrl, id }: iProps
             <div>
                 <span className='text-sm font-bold text-gray-400 uppercase'>{bodyType}</span>
                 <div className='flex items-center gap-2 pb-3'>
-                    <h3 className='font-bold'>{modelName}</h3>
+                    <h3 className='font-bold text-lg'>{modelName}</h3>
                     <span className='text-sm font-normal text-gray-400'>{modelType}</span>
                 </div>
             </div>
